@@ -1,5 +1,6 @@
 const Project = require('../models/Project');
 const Client = require('../models/Client');
+const ListingAndReview = require('../models/ListingAndReview');
 
 const {
   GraphQLObjectType,
@@ -39,9 +40,26 @@ const ClientType = new GraphQLObjectType({
   }),
 });
 
+// Listing And Review Type
+const ListingAndReviewType = new GraphQLObjectType({
+  name: 'ListingAndReview',
+  fields: () => ({
+    _id: { type: GraphQLString },
+    name: { type: GraphQLString },
+    listing_url: { type: GraphQLString },
+    summary: { type: GraphQLString },
+  }),
+});
+
 const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
   fields: {
+    listings_and_reviews: {
+      type: new GraphQLList(ListingAndReviewType),
+      resolve(parent, args) {
+        return ListingAndReview.find();
+      },
+    },
     projects: {
       type: new GraphQLList(ProjectType),
       resolve(parent, args) {
