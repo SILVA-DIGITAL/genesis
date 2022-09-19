@@ -1,14 +1,14 @@
-# Project Mgmt App
+# genesis-backend
 
-Project management app from my [GraphQL crash course](https://youtu.be/BcLNfwF04Kw) on YouTube
-
-## Usage
+An express server with GraphQL to connect to a MongoDB database
 
 ### Install
 
 1. Install Docker for your operating system.
 2. Install the [Docker Compose](https://docs.docker.com/compose/install/) tool.
 3. Run docker-compose
+
+## Usage
 
 ```
 docker-compose up -d --build
