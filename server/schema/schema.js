@@ -10,6 +10,7 @@ const {
   GraphQLList,
   GraphQLNonNull,
   GraphQLEnumType,
+  GraphQLInt,
 } = require('graphql');
 
 // Project Type
@@ -56,8 +57,9 @@ const RootQuery = new GraphQLObjectType({
   fields: {
     listings_and_reviews: {
       type: new GraphQLList(ListingAndReviewType),
+      args: { first: { type: GraphQLInt } },
       resolve(parent, args) {
-        return ListingAndReview.find();
+        return ListingAndReview.find({}, null, { limit: args.first });
       },
     },
     projects: {
