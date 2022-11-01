@@ -3,12 +3,12 @@ FROM node:16-buster
 WORKDIR /app
 
 COPY package.json /app/package.json
-COPY package-lock.json /app/package-lock.json
+COPY yarn.lock /app/yarn.lock
 
-RUN npm ci
+RUN rm -rf node_modules && yarn install
 
 COPY . /app
 
-EXPOSE 3000
+EXPOSE 5002
 
-CMD [ "npm", "run", "start" ]
+CMD ["yarn", "start"]
