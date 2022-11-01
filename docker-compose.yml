@@ -1,12 +1,12 @@
-version: "3"
-
+version: '3'
 services:
   frontend:
     build: client
     container_name: client
+    image: genesis-client
     restart: always
     ports:
-      - 3000:3000
+      - 5001:5001
     stdin_open: true
     volumes:
       - ./client:/app
@@ -19,9 +19,10 @@ services:
   backend:
     build: server
     container_name: server
+    image: genesis-server
     restart: always
     ports:
-      - 5000:5000
+      - 5002:5002
     volumes:
       - ./server:/app
       - /app/node_modules
