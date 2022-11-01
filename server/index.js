@@ -6,7 +6,6 @@ const { graphqlHTTP } = require('express-graphql');
 const schema = require('./schema/schema');
 const connectDB = require('./config/db');
 const node_port = process.env.NODE_PORT;
-const client_port = process.env.CLIENT_PORT;
 
 const app = express();
 
@@ -25,10 +24,9 @@ app.use(
 
 const consoleOutput = () => {
   console.log(``);
-  console.log(`Client running on http://localhost:${client_port}`);
   console.log(`Express running on http://localhost:${node_port}`);
   console.log(`GraphQL running on http://localhost:${node_port}/graphql`);
   console.log(``);
 };
 
-app.listen(port, consoleOutput());
+app.listen(node_port, consoleOutput());
