@@ -29,7 +29,7 @@ docker-compose up
 Alternatively you could cd into 'client' and 'server' then run the below to run the projects as normal outside of docker.
 
 ```
-yarn && yarn start. 
+yarn && yarn start
 ```
 
 
