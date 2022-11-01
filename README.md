@@ -11,10 +11,11 @@ A dockerised create-react-app that stores data express server with GraphQL to co
 ## Usage
 
 ```
-docker-compose up -d --build
+docker-compose up
 ```
 
-This will start backend, frontend and MongoDB.
+This will start backend, frontend and MongoDB. You need to setup a mongo atlas account and create sample data then put the connection string in a env file.
+
 
 #### Installation
 
