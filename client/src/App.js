@@ -31,8 +31,10 @@ import NotFound from './pages/NotFound';
 
 const cache = new InMemoryCache();
 
+console.log('process2', process.env.REACT_APP_SERVER_PORT);
+
 const client = new ApolloClient({
-  uri: 'http://localhost:5001/graphql',
+  uri: `http://localhost:${process.env.REACT_APP_SERVER_PORT}/graphql`,
   cache,
 });
 
