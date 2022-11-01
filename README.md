@@ -6,7 +6,19 @@ A dockerised create-react-app that stores data express server with GraphQL to co
 
 1. Install Docker for your operating system.
 2. Install the [Docker Compose](https://docs.docker.com/compose/install/) tool.
-3. Run docker-compose up
+3. Create a mongoDB Atlas account.
+4. Create a database on a mongoDB Atlas cluster with provided mongoDB sample_data.
+6. Copy and paste the mongoDB connection string into a .env file in server 
+6. Run docker-compose up
+
+## ENV example
+
+```
+NODE_ENV = 'development' #Toggles if we show GraphiQL for dev or production#Port for the client
+NODE_PORT = 5002 #Port for the server
+MONGO_URI_ATLAS = 'mongodb+srv://<mongodbuser>:<mongodbpassword>@genesis.xsdlwrf.mongodb.net/sample_airbnb?retryWrites=true&w=majority' #Remote URI
+MONGO_URI_LOCAL = 'mongodb://localhost:27017/sample_airbnb' #Local URI
+```
 
 ## Usage
 
@@ -14,12 +26,7 @@ A dockerised create-react-app that stores data express server with GraphQL to co
 docker-compose up
 ```
 
-This will start backend, frontend and MongoDB. You need to setup a mongo atlas account and create sample data then put the connection string in a env file.
-
-
-#### Installation
-
-yarn && yarn dev
+Alternatively you could cd into 'client' or 'server' and run yarn && yarn start. To run the applications outside of docker.
 
 ### Features
 
