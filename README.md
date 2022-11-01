@@ -26,7 +26,14 @@ MONGO_URI_LOCAL = 'mongodb://localhost:27017/sample_airbnb' #Local URI
 docker-compose up
 ```
 
-Alternatively you could cd into 'client' or 'server' and run yarn && yarn start. To run the applications outside of docker.
+Alternatively you could cd into 'client' and 'server' then run the below to run the projects as normal outside of docker.
+
+```
+yarn && yarn start. 
+```
+
+
+To run the applications outside of docker.
 
 ### Features
 
@@ -42,4 +49,3 @@ Alternatively you could cd into 'client' or 'server' and run yarn && yarn start.
 - ![Express](https://img.shields.io/badge/-Express-%23232F3E?logo=Express)
 - ![MongoDB](https://img.shields.io/badge/-MongoDB-%23232F3E?logo=MongoDB)
 - ![GraphQL](https://img.shields.io/badge/-GraphQL-%23232F3E?logo=GraphQL)
-```
